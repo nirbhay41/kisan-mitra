@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import {Login} from "./components/login/index";
-import fire from "./fire";
+import { Login } from "./components/login/index";
+import { fire } from "./fire";
 import Hero from "./components/Hero";
+import firebase from "firebase";
 
 const App = () => {
   //For authentication
@@ -11,7 +12,25 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-  const [hasAccount, setHasAccount] = useState(false);
+  const [hasAccount, setHasAccount] = useState(true);
+
+  const login_with_google = () => {
+    firebase
+      .auth()
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then((result) => {
+        var credential = result.credential;
+        //console.log(credential);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        //console.log(token);
+        // The signed-in user info.
+        var user = result.user;
+        //console.log(user);
+      })
+      .catch((error) => {
+      });
+  };
 
   const clearInputs = () => {
     setEmail("");
@@ -33,7 +52,9 @@ const App = () => {
           case "auth/invalid-email":
           case "auth/user-disabled":
           case "auth/user-not-found":
-            setEmailError("There is no user record corresponding to this identifier");
+            setEmailError(
+              "There is no user record corresponding to this identifier"
+            );
             break;
           case "auth/wrong-password":
             setPasswordError(err.message);
@@ -99,6 +120,7 @@ const App = () => {
               emailError={emailError}
               passwordError={passwordError}
               clearErrors={clearErrors}
+              googleLogin={login_with_google}
             />
           </div>
         </div>

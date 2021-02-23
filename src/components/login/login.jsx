@@ -1,5 +1,6 @@
 import React from "react";
 import loginImg from "../../resources/login_page_pic.svg";
+import googleLogo from "../../resources/google_logo.webp";
 
 export const Login = (props) => {
   const {
@@ -14,6 +15,7 @@ export const Login = (props) => {
     emailError,
     passwordError,
     clearErrors,
+    googleLogin
   } = props;
 
   return (
@@ -54,16 +56,15 @@ export const Login = (props) => {
       <div className="footer">
         {hasAccount ? (
           <>
-            <button className="btn" onClick={handleLogin}>
-              Sign In
-            </button>
+            <button className="btn" onClick={handleLogin}>Sign In</button>
+            <img src={googleLogo} onClick={googleLogin} alt="googlelogo"/>
             <p>
               Don't have an account ?
               <span onClick={() => {
                   clearErrors();
                   setHasAccount(!hasAccount);
                 }}
-              > Sign Up</span>
+              ><b> Sign Up</b></span>
             </p>
           </>
         ) : (
@@ -76,7 +77,7 @@ export const Login = (props) => {
               <span onClick={() => {
                 clearErrors();
                 setHasAccount(!hasAccount);
-                }}> Sign In</span>
+                }}><b> Sign In</b></span>
             </p>
           </>
         )}
