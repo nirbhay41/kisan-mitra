@@ -1,13 +1,19 @@
 import React from "react";
-import firebase from "firebase";
+import Navbar from "./Navbar/Navbar";
+import Home from './Pages/Home';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const Hero = ({ handleLogout }) => {
+const Hero = ({handleLogout}) => {
   return (
     <div className="hero">
-      <nav>
-        <h1>Welcome To mY Website {firebase.auth().currentUser.displayName}</h1>
-        <button onClick={handleLogout}>Logout</button>
-      </nav>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={Home}/>
+        </Switch>
+      </Router>
+      <h1>Logout</h1>
+      <button onClick={handleLogout}>logout</button>
     </div>
   );
 };

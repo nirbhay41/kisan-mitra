@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import { Login } from "./components/login/index";
+import { Login } from "./components/login/login";
 import { fire } from "./fire";
 import Hero from "./components/Hero";
 import firebase from "firebase";
@@ -17,19 +17,7 @@ const App = () => {
   const login_with_google = () => {
     firebase
       .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider())
-      .then((result) => {
-        var credential = result.credential;
-        //console.log(credential);
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
-        //console.log(token);
-        // The signed-in user info.
-        var user = result.user;
-        //console.log(user);
-      })
-      .catch((error) => {
-      });
+      .signInWithPopup(new firebase.auth.GoogleAuthProvider());
   };
 
   const clearInputs = () => {
