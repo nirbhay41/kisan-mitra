@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { Login } from "./components/login/login";
-import { fire } from "./fire";
 import Hero from "./components/Hero";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser,login,logout } from "./features/userSlice";
 import firebase from "firebase";
+import {auth} from './fire';
 
 const App = () => {
   //For authentication
-  const [user, setUser] = useState("");
+  const dispatch = useDispatch();
+  const user = useSelector(selectUser);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [hasAccount, setHasAccount] = useState(true);
 
-  const login_with_google = () => {
-    firebase
-      .auth()
-      .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  const signInWithGoogle = async () => {
+    auth.useDeviceLanguage();
+    try {
+      await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   const clearInputs = () => {
@@ -32,8 +38,7 @@ const App = () => {
 
   const handleLogin = () => {
     clearErrors();
-    fire
-      .auth()
+    auth
       .signInWithEmailAndPassword(email, password)
       .catch((err) => {
         switch (err.code) {
@@ -53,8 +58,7 @@ const App = () => {
 
   const handleSignup = () => {
     clearErrors();
-    fire
-      .auth()
+    auth
       .createUserWithEmailAndPassword(email, password)
       .catch((err) => {
         switch (err.code) {
@@ -69,30 +73,31 @@ const App = () => {
       });
   };
 
-  const handleLogout = () => {
-    fire.auth().signOut();
-  };
-
   const authListner = () => {
-    fire.auth().onAuthStateChanged((user) => {
+    auth.onAuthStateChanged((user) => {
       if (user) {
         clearInputs();
-        setUser(user);
+        dispatch(login({
+          uid: user.uid,
+          photo: user.photoURL,
+          email: user.email,
+          displayName: user.displayName
+        }));
       } else {
-        setUser("");
+        dispatch(logout());
       }
     });
   };
 
   useEffect(() => {
     authListner();
-  }, []);
+  }, [dispatch]);
 
   //For login page UI
   return (
     <div className="App">
       {user ? (
-        <Hero handleLogout={handleLogout} />
+        <Hero/>
       ) : (
         <div className="login">
           <div className="container">
@@ -108,7 +113,7 @@ const App = () => {
               emailError={emailError}
               passwordError={passwordError}
               clearErrors={clearErrors}
-              googleLogin={login_with_google}
+              googleLogin={signInWithGoogle}
             />
           </div>
         </div>

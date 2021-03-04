@@ -1,9 +1,11 @@
-.home,
-.services,
-.products,
-.sign-up {
+.hero{
   display: flex;
-  height: 70vh;
+  flex-direction: column;
+}
+
+.home {
+  display: flex;
+  height: 60vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;

@@ -11,10 +11,10 @@ function HeroSection() {
                 <h1>Adventure Awaits</h1>
                 <p>What are you waiting for ?</p>
                 <div className="hero-btns">
-                    <Button bttonStyle="btn--outline" buttonSize="btn--large">
+                    <Button buttonStyle="btn--outline" buttonSize="btn--large">
                         Get Started
                     </Button>
-                    <Button buttonStyle="btn--primary" buttonSize="btn--large">
+                    <Button buttonStyle="btn--outline" buttonSize="btn--large">
                         WATCH TRAILER <i className='far fa-play-circle'/>
                     </Button>
                 </div>
