@@ -1,0 +1,80 @@
+// @import "compass/css3";
+
+.home{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex: 1 0 1;
+    background-color: #7ee8fa;
+    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+}
+/* Some vars */
+$background-color: hsl(50, 5, 97);
+$black: hsl(200, 40, 10);
+$white: $background-color;
+$base-font-size: 2.4em;
+$base-line-height: 1.5em;
+
+
+.quote-text {
+    position: relative;
+    font-family: 'Poppins', serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    color:black;
+
+    .author {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.9em;
+        font-weight: 700;
+        color: black;
+        float: right;
+
+        &:before {
+            content: '\2015';
+        }
+    }
+
+    &:before {
+        content: '\201C';
+        position: absolute;
+        left: -0.39em;
+        color: black;
+        font-size: 6em;
+        z-index: 1;
+    }
+
+    &:after {
+        content: '\201D';
+        position: absolute;
+        top: 0.7em;
+        right: -34px;
+        font-size: 6em;
+        font-style: italic;
+        color: black;
+        z-index: 1;
+    }
+}
+
+
+/* Some generic stuff. Don't worry about it */
+
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700),
+url(https://fonts.googleapis.com/css?family=Sanchez:400italic,400),
+url(https://fonts.googleapis.com/css?family=Roboto:100);
+
+html {
+    // background: hsl(50, 5, 97);
+    font-size: 16px;
+}
+
+.quote {
+    width: 80em;
+    margin: 15em auto auto auto;
+    font-size: 62.5%;
+    min-height: 18vh;
+}
+
+blockquote {
+    margin-bottom: 3em;
+}

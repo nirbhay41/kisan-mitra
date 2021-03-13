@@ -3,9 +3,9 @@ import "./App.scss";
 import { Login } from "./components/login/login";
 import Hero from "./components/Hero";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser,login,logout } from "./features/userSlice";
+import { selectUser, login, logout } from "./features/userSlice";
 import firebase from "firebase";
-import {auth} from './fire';
+import { auth } from './fire';
 
 const App = () => {
   //For authentication
@@ -30,7 +30,7 @@ const App = () => {
     setEmail("");
     setPassword("");
   };
-
+  
   const clearErrors = () => {
     setEmailError("");
     setPasswordError("");
@@ -97,24 +97,26 @@ const App = () => {
   return (
     <div className="App">
       {user ? (
-        <Hero/>
+        <Hero />
       ) : (
-        <div className="login">
-          <div className="container">
-            <Login
-              email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-              handleLogin={handleLogin}
-              handleSignup={handleSignup}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount}
-              emailError={emailError}
-              passwordError={passwordError}
-              clearErrors={clearErrors}
-              googleLogin={signInWithGoogle}
-            />
+        <div className="main">
+          <div className="login">
+            <div className="container">
+              <Login
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                handleLogin={handleLogin}
+                handleSignup={handleSignup}
+                hasAccount={hasAccount}
+                setHasAccount={setHasAccount}
+                emailError={emailError}
+                passwordError={passwordError}
+                clearErrors={clearErrors}
+                googleLogin={signInWithGoogle}
+              />
+            </div>
           </div>
         </div>
       )}

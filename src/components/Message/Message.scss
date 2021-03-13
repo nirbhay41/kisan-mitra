@@ -5,15 +5,43 @@
     color: white;
 }
 
+.box-chat{
+    background-color: #485461;
+    border-radius: 20px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+    max-width: 50%;
+    min-width: 29%;
+    word-break: break-all;
+}
+
 .message__info{
     margin-left: 20px;
 }
 
 .message__timestamp{
-    color: gray;
+    color: white;
     margin-left: 20px;
+    font-size: 1.1rem;
 }
 
 .message__info > p{
     float: left;
+    padding: 10px 11px 5px 0px;
+    font-size: 17px;
+}
+
+.message__info > h4{
+    font-weight: 900;
+    padding-right: 10px;
+}
+
+.sent{
+    justify-content: flex-end;
+}
+
+.avatarClass-on{
+    visibility: hidden;
 }

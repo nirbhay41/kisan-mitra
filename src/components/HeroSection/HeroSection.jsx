@@ -1,22 +1,25 @@
 import React from 'react'
-import Button from  '../Button/Button';
+import { Link } from 'react-scroll';
+import Button from '../Button/Button';
 import './HeroSection.scss';
-import '../Hero.scss';
+import video from '../../resources/bg-video.mp4';
+import landingPage from '../../resources/images/img3.jpg';
 
 function HeroSection() {
     return (
         <div className="hero-container">
-            <video src='/resources/video-5.mp4' autoPlay loop muted />
+            {/* <video src={video} autoPlay loop muted /> */}
+            <img src={landingPage} alt="photo"/>
             <div className="text">
-                <h1>Adventure Awaits</h1>
-                <p>What are you waiting for ?</p>
+                <h1>Imagine living</h1>
+                <p>Impossible without farming</p>
+                <p id="hashtag">#Feeding Millions</p>
                 <div className="hero-btns">
-                    <Button buttonStyle="btn--outline" buttonSize="btn--large">
-                        Get Started
+                    <Link to='card' smooth>
+                        <Button buttonStyle="btn--outline" buttonSize="btn--large">
+                            Get Started
                     </Button>
-                    <Button buttonStyle="btn--outline" buttonSize="btn--large">
-                        WATCH TRAILER <i className='far fa-play-circle'/>
-                    </Button>
+                    </Link>
                 </div>
             </div>
         </div>

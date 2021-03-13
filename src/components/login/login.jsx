@@ -1,5 +1,7 @@
 import React from "react";
-import './style.scss';
+import './login.scss';
+import loginPagePic from '../../resources/login_page_pic.svg';
+import googleLogo from '../../resources/google_logo.webp';
 
 export const Login = (props) => {
   const {
@@ -18,12 +20,11 @@ export const Login = (props) => {
   } = props;
 
   return (
-    <div className="login">
       <div className="base-container">
-        <div className="header">Login</div>
+        <div className="header">{hasAccount ? 'Login': 'Sign Up'}</div>
         <div className="content">
           <div className="image">
-            <img src='/resources/login_page_pic.svg'/>
+            <img src={loginPagePic}/>
           </div>
           <div className="form">
             <div className="form-group">
@@ -59,7 +60,7 @@ export const Login = (props) => {
               <button className="btn" onClick={handleLogin}>
                 Sign In
               </button>
-              <img src='/resources/google_logo.webp' onClick={googleLogin} alt="googlelogo" />
+              <img src={googleLogo} onClick={googleLogin} alt="googlelogo" />
               <p>
                 Don't have an account ?
                 <span
@@ -92,6 +93,5 @@ export const Login = (props) => {
           )}
         </div>
       </div>
-    </div>
   );
 };

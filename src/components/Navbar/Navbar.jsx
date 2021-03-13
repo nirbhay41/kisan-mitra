@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import firebase from 'firebase';
+import logo from '../../resources/logo_transp.png';
 
-function Navbar() {
+function Navbar({backgroundStyle}) {
+  const checkStyle = backgroundStyle === 'bg-color' ? backgroundStyle : '';
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -24,10 +27,10 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={`navbar ${checkStyle}`}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <img id="logo" src='/resources/logo_1_trans.png' />
+            <img id="logo" src={logo} />
               Kishan-Mittre
           </Link>
           <div className="menu-icon" onClick={handleClick}>

@@ -3,7 +3,8 @@
     flex-direction: column;
     flex:0.2;
     height: 91.8vh;
-    background-color: #2f3135;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 }
 
 .sidebar_top{
@@ -11,9 +12,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #2f3135;
+    // background-color: #2f3135;
     color: white;
-    border-bottom: 3px solid #26282c;
+    border-bottom: 1px solid gray;
 }
 
 .sidebar_channels{
@@ -33,7 +34,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #2f3135;
+    // background-color: #2f3135;
     color: gray;
 }
 
@@ -46,7 +47,7 @@
     display: flex;
     align-items: center;
     color: white;
-    background-color: #2f3135;
+    // background-color: #2f3135;
     padding: 10px;
     border-top: 1px solid gray;
     flex:0.09;
@@ -54,4 +55,5 @@
 
 .sidebar_profileInfo{
     padding: 10px;
+    text-transform: capitalize;
 }

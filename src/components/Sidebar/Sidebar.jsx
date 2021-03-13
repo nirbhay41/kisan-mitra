@@ -33,7 +33,7 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebar_top">
-                <h3>Clever Programmer</h3>
+                <h3>Discussion Forum</h3>
                 <ExpandMore />
             </div>
 
@@ -56,7 +56,7 @@ function Sidebar() {
             <div className="sidebar_profile">
                 <Avatar src={user.photo} />
                 <div className="sidebar_profileInfo">
-                    <h3>{user.displayName}</h3>
+                    <h3>{user.displayName ? user.displayName : 'Guest User'}</h3>
                 </div>
             </div>
         </div>

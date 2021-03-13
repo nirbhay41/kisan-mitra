@@ -1,24 +1,29 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 .App {
+  font-family: "Open Sans", sans-serif;
+}
+
+.main{
+  min-height: 100vh;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Open Sans", sans-serif;
+  background: url('./resources/background.jpg') no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
-
 
 //Login Main Container
 .login { 
   width: 25em;
-  height: 40em;
+  height: 39em;
   // min-height: 44em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-  position: relative;
   z-index: 99;
   .container {
     display: flex;

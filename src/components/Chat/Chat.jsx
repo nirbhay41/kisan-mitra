@@ -1,5 +1,5 @@
 import { AddCircleOutline, SendOutlined } from '@material-ui/icons';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ChatHeader from '../ChatHeader/ChatHeader';
 import Message from '../Message/Message';
 import "./Chat.scss";
@@ -15,6 +15,7 @@ function Chat() {
     const channelName = useSelector(selectChannelName);
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
+    const dummy = useRef();
 
     useEffect(() => {
         if (channelId) {
@@ -27,27 +28,35 @@ function Chat() {
         }
     }, [channelId]);
 
+    useEffect(() => {
+        dummy.current.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]);
+
     const sendMessage = e => {
         e.preventDefault();
-        db.collection("channels").doc(channelId).collection("message").add({
-            message: input,
-            user: user,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        })
+        if (input) {
+            db.collection("channels").doc(channelId).collection("message").add({
+                message: input,
+                user: user,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            })
+        }
         setInput("");
     }
+
     return (
         <div className="chat">
             <ChatHeader channelName={channelName} />
             <div className="chat__messages">
                 {messages.map((message) => (
-                    
-                    <Message key={1}
+
+                    <Message key={message.createdAt}
                         createdAt={message.createdAt}
                         message={message.message}
                         user={message.user}
                     />
                 ))}
+                <span ref={dummy}></span>
             </div>
 
             <div className="chat__input">

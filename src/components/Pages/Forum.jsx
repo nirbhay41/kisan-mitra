@@ -5,10 +5,12 @@ import "./Forum.scss";
 
 function Forum() {
     return (
-        <div className="forum">
-            <Sidebar />
-            <Chat />
-        </div>
+        <>
+            <div className="forum">
+                <Sidebar />
+                <Chat />
+            </div>
+        </>
     )
 }
 

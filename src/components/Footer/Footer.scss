@@ -1,0 +1,164 @@
+footer{
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #27282C;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.sec{
+    margin-right: 30px;
+}
+.footer-about{
+    width: 40%;
+}
+
+.footer-about > h2{
+    color: white;
+    position: relative;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-about > h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #f00;
+}
+
+.footer-about > p{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.social-media-icons{
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-media-icons li{
+    list-style: none;
+}
+
+.social-media-icons a{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.social-media-icons a:hover{
+    background-color: #f00;
+}
+
+.social-media-icons .fab{
+    color: #fff;
+    font-size: 20px;
+}
+
+.footer-contact{
+    color: white;
+    width: calc(20% - 60px);
+    margin-right: 0 !important;
+}
+
+.footer-contact > h2{
+    margin-bottom: 10px;
+}
+
+.info{
+    position: relative;
+}
+
+.info > li{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.info > li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.info > li span{
+    color: #999;
+}
+
+.info li a{
+    color: #999;
+    text-decoration: none;
+}
+
+.info li a:hover{
+    color: #fff;
+}
+
+.footer-help > h2{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.number li{
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.number li span{
+    color: white;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.number li a{
+    color: #999;
+    text-decoration: none;
+}
+
+.number li a:hover{
+    color: white;
+}
+
+@media (max-width: 991px){
+    footer{
+        padding: 40px;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+
+    .sec{
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .footer-about, .footer-contact{
+        width: 100%;
+    }
+
+    .footer-help > h2{
+        text-align: left;
+    }
+}
