@@ -7,6 +7,8 @@
   .header {
     font-size: 24px;
     font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-weight: 900;
   }
 
   .content {
@@ -38,6 +40,7 @@
         label {
           font-size: 20px;
           padding-bottom: 5px;
+          color: #fff;
         }
         input {
           margin-top: 2px;
@@ -54,7 +57,7 @@
 
           &:focus {
             outline: none;
-            box-shadow: 0px 0px 12px 0.8px #3474dbb2;
+            // box-shadow: 0px 0px 4px 0.8px #3474dbb2;
           }
         }
       }
@@ -67,16 +70,17 @@
 
   .footer {
     margin-top: 20px;
-    img {
-      // width: 2em;
-      height: 2em;
-      float: right;
-      padding-right: 2em;
+    i{
+      font-size:1.8rem;
+      float:right;
       cursor: pointer;
+      padding-right: 1em;
+      color: aquamarine;
     }
     p {
       font-size: large;
       padding-top: 5%;
+      color: #fff;
     }
     span:hover {
       cursor: pointer;

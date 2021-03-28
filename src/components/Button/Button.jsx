@@ -1,9 +1,9 @@
 import React from 'react'
 import './Button.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const STYLES = ['btn--primary','btn--outline'];
-const SIZES = ['btn--medium','btn--large'];
+const STYLES = ['btn--primary', 'btn--outline'];
+const SIZES = ['btn--medium', 'btn--large'];
 
 const Button = ({
     children,
@@ -15,16 +15,14 @@ const Button = ({
     const checkButtonStyle = STYLES.includes(buttonStyle) ? buttonStyle : STYLES[0];
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
-    return(
-        <Link to='/' className='btn-mobile'>
-            <button 
+    return (
+        <button
             className={`bttn ${checkButtonStyle} ${checkButtonSize}`}
             onClick={onClick}
             type={type}
-            >
-                {children}
-            </button>
-        </Link>
+        >
+            {children}
+        </button>
     )
 };
 

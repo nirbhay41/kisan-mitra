@@ -1,9 +1,9 @@
 import React from 'react'
 import CardItem from '../CardItem/CardItem';
-import card2 from '../../resources/cards_images/card2.jpg';
-import card3 from '../../resources/cards_images/card3.jpg'
-import card4 from '../../resources/cards_images/card4.jpg'
-import card5 from '../../resources/cards_images/card5.jpg'
+import card2 from '../../resources/cards_images/card2.webp';
+import card3 from '../../resources/cards_images/card3.webp'
+import card4 from '../../resources/cards_images/card4.webp'
+import card5 from '../../resources/cards_images/card5.webp'
 import './Cards.scss';
 
 function Cards() {

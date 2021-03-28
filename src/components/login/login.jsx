@@ -1,7 +1,6 @@
 import React from "react";
 import './login.scss';
 import loginPagePic from '../../resources/login_page_pic.svg';
-import googleLogo from '../../resources/google_logo.webp';
 
 export const Login = (props) => {
   const {
@@ -60,7 +59,7 @@ export const Login = (props) => {
               <button className="btn" onClick={handleLogin}>
                 Sign In
               </button>
-              <img src={googleLogo} onClick={googleLogin} alt="googlelogo" />
+              <i className="fab fa-google" onClick={googleLogin}></i>
               <p>
                 Don't have an account ?
                 <span

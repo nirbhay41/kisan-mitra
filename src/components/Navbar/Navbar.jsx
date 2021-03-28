@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import firebase from 'firebase';
-import logo from '../../resources/logo_transp.png';
+import logo from '../../resources/logo_transp.webp';
 
 function Navbar({backgroundStyle}) {
   const checkStyle = backgroundStyle === 'bg-color' ? backgroundStyle : '';
@@ -30,8 +30,8 @@ function Navbar({backgroundStyle}) {
       <nav className={`navbar ${checkStyle}`}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            <img id="logo" src={logo} />
-              Kishan-Mittre
+            <img id="logo" src={logo} alt='kishan-mittre logo'/>
+              <p>Kishan-Mittre</p>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
