@@ -20,7 +20,7 @@ function Cards() {
                         />
                         <CardItem
                             src={card3}
-                            text='“You know, farming looks mighty easy when your plow is a pencil, and you’re a thousand miles from the corn field.” – Dwight D. Eisenhower'
+                            text='“I would rather be on my farm than be emperor of the world.” – George Washington'
                             label='Forum'
                             path='/forum'
                         />

@@ -36,7 +36,6 @@
         flex-direction: column;
         align-items: flex-start;
         width: fit-content;
-        margin-top:20px;
         label {
           font-size: 20px;
           padding-bottom: 5px;
@@ -61,6 +60,10 @@
           }
         }
       }
+
+      .form-group:last-of-type{
+        margin-top:20px;
+      }
       .errorMsg {
         color: red;
         font-size: 16px;
@@ -75,15 +78,38 @@
       float:right;
       cursor: pointer;
       padding-right: 1em;
-      color: aquamarine;
+      color: #DB4437;
     }
     p {
-      font-size: large;
+      font-size: 1.1em;
       padding-top: 5%;
       color: #fff;
+      font-weight: 900;
     }
     span:hover {
       cursor: pointer;
     }
+  }
+}
+
+@media (max-width:500px){
+  .base-container .header{
+    font-size: 20px;
+  }
+
+  .base-container .content .image{
+    width: 13em;
+  }
+
+  .base-container .content .form .form-group input{
+    min-width: 16em;
+  }
+
+  .form-group label{
+    font-size: 17px;
+  }
+
+  .footer p{
+    font-size: 17px;
   }
 }

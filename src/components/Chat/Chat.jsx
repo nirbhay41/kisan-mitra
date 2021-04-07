@@ -1,13 +1,28 @@
 import { AddCircleOutline, SendOutlined } from '@material-ui/icons';
 import React, { useEffect, useRef, useState } from 'react';
 import ChatHeader from '../ChatHeader/ChatHeader';
-import Message from '../Message/Message';
 import "./Chat.scss";
 import { useSelector } from "react-redux";
 import { selectChannelId, selectChannelName } from '../../features/appSlice';
 import firebase from "firebase";
 import { selectUser } from '../../features/userSlice';
 import { db } from '../../fire';
+import Loadable from 'react-loadable';
+
+function Loading(props) {
+    if (props.error) {
+      return <div>Error! <button onClick={props.retry}>Retry</button></div>;
+    } else if (props.pastDelay) {
+      return <div>Loading...</div>;
+    } else {
+      return null;
+    }
+}
+
+const Message = Loadable({
+    loader: () => import('../Message/Message'),
+    loading: Loading,
+})
 
 function Chat() {
     const user = useSelector(selectUser);

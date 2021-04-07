@@ -6,7 +6,7 @@ import firebase from 'firebase';
 import logo from '../../resources/logo_transp.webp';
 
 function Navbar({backgroundStyle}) {
-  const checkStyle = backgroundStyle === 'bg-color' ? backgroundStyle : '';
+  const checkStyle = backgroundStyle === 'bg-grey' ? 'bg-grey' : 'bg-black';
 
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
@@ -36,7 +36,7 @@ function Navbar({backgroundStyle}) {
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
+          <ul className={click ? `nav-menu active ${checkStyle}` : `nav-menu ${checkStyle}`}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                 Home

@@ -10,13 +10,15 @@
   position: sticky;
   top: 0;
   z-index: 999;
-  filter: drop-shadow(2px 4px 6px black);
-  opacity: 0.99; 
+  filter: drop-shadow(2px 4px 6px black); 
 }
 
-.bg-color {
-  // background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+.bg-grey {
   background: #27282C;
+}
+
+.bg-black{
+  background: black;
 }
 
 .navbar-container {
@@ -93,7 +95,6 @@
   }
 
   .nav-menu.active {
-    background: #27282C;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;

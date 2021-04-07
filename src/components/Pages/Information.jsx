@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+import Navbar from "../Navbar/Navbar";
 
 function Information() {
-    return (
-        <div className="information">
-        </div>
-    )
+  return (
+    <>
+      <Navbar backgroundStyle='bg-grey'/>
+      <div className="information"></div>
+    </>
+  );
 }
 
 export default Information;

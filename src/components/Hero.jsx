@@ -1,33 +1,58 @@
-import React, { lazy, Suspense } from "react";
+import Loadable from "react-loadable";
 import "./Hero.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./Navbar/Navbar";
-// import Home from './Pages/Home';
-// import Forum from "./Pages/Forum";
-// import Information from "./Pages/Information";
-// import Schemes from "./Pages/Schemes";
-// import About from "./Pages/About";
 
 //Code Splitting
-const Home = lazy(() => import('./Pages/Home'));
-const Forum = lazy(() => import('./Pages/Forum'));
-const Information = lazy(() => import('./Pages/Information'));
-const Schemes = lazy(() => import('./Pages/Schemes'));
-const About = lazy(() => import('./Pages/About'));
+function Loading(props) {
+  if (props.error) {
+    return <div>Error! <button onClick={props.retry}>Retry</button></div>;
+  } else if (props.pastDelay) {
+    return <div>Loading...</div>;
+  } else {
+    return null;
+  }
+}
+
+const Home = Loadable({
+  loader: () => import("./Pages/Home"),
+  loading: Loading,
+  delay:300,
+});
+
+const Forum = Loadable({
+  loader: () => import("./Pages/Forum"),
+  loading: Loading,
+  delay:300,
+});
+
+const Information = Loadable({
+  loader: () => import("./Pages/Information"),
+  loading: Loading,
+  delay:300,
+});
+
+const Schemes = Loadable({
+  loader: () => import("./Pages/Schemes"),
+  loading: Loading,
+  delay:300,
+});
+
+const About = Loadable({
+  loader: () => import("./Pages/About"),
+  loading: Loading,
+  delay:300,
+});
 
 const Hero = () => {
   return (
     <div className="hero">
       <Router>
-        <Navbar backgroundStyle='bg-color' />
         <Switch>
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/forum' component={Forum} />
-            <Route exact path='/info' component={Information} />
-            <Route exact path='/schemes' component={Schemes} />
-            <Route exact path='/about' component={About} />
-          </Suspense>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/forum" component={Forum} />
+          <Route exact path="/info" component={Information} />
+          <Route exact path="/schemes" component={Schemes} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </Router>
     </div>

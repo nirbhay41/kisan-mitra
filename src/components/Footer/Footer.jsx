@@ -1,9 +1,10 @@
 import React from 'react'
 import './Footer.scss';
 
-function Footer() {
+function Footer({backgroundStyle}) {
+    const checkStyle = backgroundStyle === 'bg-black' ? 'bg-black' : 'bg-grey';
     return (
-        <footer>
+        <footer className={checkStyle}>
             <div className="footer-container">
                 <div className="sec footer-about">
                     <h2>About us</h2>

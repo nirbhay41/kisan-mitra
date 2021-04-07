@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+.schemes {
+  position: relative;
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.schemes_heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.4em;
+  font-size: 5rem;
+  font-weight: 700;
+  background-image: url('../../resources/text-clip-image.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.schemes-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+  margin-right: 20px;
+  // min-width: 30em;
+}
+
+.schemes-footer {
+  position: absolute;
+}
+
+@media (max-width: 1199px) {
+  .schemes-list {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .schemes_heading {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .schemes-list {
+    margin-left: 8px;
+  }
+
+  .schemes_heading {
+    font-size: 2.1rem;
+    text-align: center;
+  }
+}
