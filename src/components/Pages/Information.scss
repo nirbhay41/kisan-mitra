@@ -1,0 +1,17 @@
+.information{
+    height: 91.7vh;
+    display: flex;
+    background-image: linear-gradient(to bottom right, #ff9eaa 0% 65%, #e860ff 95% 100%);
+}
+
+.page-content {
+    display: grid;
+    grid-gap: 5rem;
+    padding: 1rem 3rem;
+    max-width: 1024px;
+    margin: auto auto auto auto;
+    font-family: 'Roboto',sans-serif;
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

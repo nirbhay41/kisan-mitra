@@ -8,7 +8,7 @@ function HeroSection() {
   return (
     <div className="hero-container">
       {/* <video src={landingPage} autoPlay loop muted /> */}
-      <img src={landingPage} alt="photo" />
+      <img src={landingPage} alt="farm" />
       <div className="text">
         <h1>Imagine living</h1>
         <p>Impossible without farming</p>

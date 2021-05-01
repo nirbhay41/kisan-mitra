@@ -43,6 +43,24 @@ const About = Loadable({
   delay:300,
 });
 
+const Crops = Loadable({
+  loader: () => import("./Pages/Crops/Crops"),
+  loading: Loading,
+  delay:300,
+});
+
+const Soils = Loadable({
+  loader: () => import("./Pages/Soils/Soils"),
+  loading: Loading,
+  delay: 300,
+});
+
+const NotFound = Loadable({
+  loader: () => import("./Pages/NotFound"),
+  loading: Loading,
+  delay: 300,
+})
+
 const Hero = () => {
   return (
     <div className="hero">
@@ -53,6 +71,9 @@ const Hero = () => {
           <Route exact path="/info" component={Information} />
           <Route exact path="/schemes" component={Schemes} />
           <Route exact path="/about" component={About} />
+          <Route exact path="/info/crops" component={Crops} />
+          <Route exact path="/info/soils" component={Soils} />
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
     </div>

@@ -9,25 +9,37 @@
 }
 
 .quote-text, .author{
-    background-image: url('../../resources/quote-text.webp');
+    background-image: url('../../resources/text-clip-image.jpeg');
     color: transparent;
     -webkit-background-clip: text;
 }
+
 .quote-text {
     position: relative;
     width: 13em;
-    font-family: 'Poppins', serif;
-    font-size: 5em;
+    font-family: 'Niconne', serif;
+    font-size: 6.5em;
     line-height: 1.5em;
     font-weight: 700;
     .author {
-        font-family: 'Poppins', sans-serif;
         font-size: 0.9em;
         font-weight: 700;
         float: right;
         &:before {
             content: '\2015';
         }
+    }
+}
+
+@media (max-width:934px){
+    .quote-text{
+        font-size: 5.2em;
+    }
+}
+
+@media (max-width:769px){
+    .quote-text{
+        font-size: 4.8em;
     }
 }
 

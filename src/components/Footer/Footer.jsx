@@ -8,9 +8,9 @@ function Footer({backgroundStyle}) {
             <div className="footer-container">
                 <div className="sec footer-about">
                     <h2>About us</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto obcaecati esse
-                    eos optio eligendi vitae consequatur minima autem ad quo ex ipsam suscipit amet sit,
-                    ratione repudiandae, fuga culpa dolore.</p>
+                    <p>Kisan Mitra is a programme designed to approach and understand farmers needs, offer advice, guide and refer best farm practices to them. 
+                        Be it soil, growth and nurturing of crops or pest related problems Kisan Mitra Team (KM) – is dedicated to resolve them. 
+                    </p>
                     <ul className="social-media-icons">
                         <li><a href=""><i className="fab fa-facebook"></i></a></li>
                         <li><a href=""><i className="fab fa-twitter"></i></a></li>
@@ -47,7 +47,7 @@ function Footer({backgroundStyle}) {
 
                         <li>
                             <span><i className="fas fa-envelope"></i></span>
-                            <p><a href="mailto:kishan-mittre@gmail.com">kishan-mittre@gmail.com</a></p>
+                            <p><a href="mailto:kisanmitra@gmail.com">kisanmitra@gmail.com</a></p>
                         </li>
                     </ul>
                 </div>

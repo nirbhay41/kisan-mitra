@@ -22,8 +22,9 @@
     flex:1;
 }
 
-.sidebar_addChannels{
+.sidebar_addChannel{
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 .sidebar_addChannel:hover{
@@ -48,10 +49,19 @@
     display: flex;
     align-items: center;
     color: white;
-    // background-color: #2f3135;
     padding: 10px;
     border-top: 1px solid gray;
     flex:0.09;
+
+    i{
+        font-size: 3rem;
+    }
+
+    img{
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+    }
 }
 
 .sidebar_profileInfo{

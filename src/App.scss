@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 .App {
   font-family: "Open Sans", sans-serif;
@@ -40,6 +40,11 @@
     padding: 17px 10px;
     //transition: transform 200ms ease-in-out;
   }
+
+  @media screen and (max-width: 500px) {
+    width: 18em;
+    min-height: 36em;
+  }
 }
 
 //Button
@@ -56,17 +61,8 @@
   &:focus {
     outline: none;
   }
-}
 
-@media (max-width: 500px) {
-  .login {
-    @media (max-width: 500px) {
-      width: 20em;
-      min-height: 36em;
-    }
-  }
-
-  .btn {
-    font-size: 18px;
+  @media screen and (max-width: 500px) {
+    font-size: 15px;
   }
 }

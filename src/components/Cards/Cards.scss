@@ -30,8 +30,7 @@ h5 {
     flex: 1;
     margin: 0 1rem;
     border-radius: 10px;
-    background-color: #7ee8fa;
-    background-image: linear-gradient(315deg, #7ee8fa 0%, #80ff72 74%);
+    background: #27282C;
 }
 
 .cards__item__link {
@@ -92,13 +91,13 @@ h5 {
 }
 
 .cards__item__info {
-    padding: 20px 30px 30px;
+    padding: 20px 10px 20px 10px;
 }
 
 .cards__item__text {
-    color: black;
-    font-size: 18px;
-    line-height: 24px;
+    color: white;
+    font-size: 1.4em;
+    line-height: 26px;
 }
 
 @media only screen and (min-width: 1024px) {

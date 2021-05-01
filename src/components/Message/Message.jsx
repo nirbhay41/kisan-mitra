@@ -5,14 +5,14 @@ import { selectUser } from '../../features/userSlice';
 import "./Message.scss";
 
 
-function Message({ createdAt, message, user }) {
+function Message({ createdAt, message, user, imageurl }) {
     const usr = useSelector(selectUser);
     const messageClass = usr.uid === user.uid ? 'sent' : '';
     const avatarClass = messageClass === 'sent' ? 'avatarClass-on' : '';
 
     return (
         <div className={`message ${messageClass}`}>
-            {user.photo ? <Avatar className={avatarClass} src={user.photo}/> : <Avatar className={avatarClass}/>}
+            {user.photo ? <Avatar className={avatarClass} src={user.photo} /> : <Avatar className={avatarClass} />}
             <div className="box-chat">
                 <div className="message__info">
                     <h4>
@@ -21,7 +21,10 @@ function Message({ createdAt, message, user }) {
                             {new Date(createdAt?.toDate()).toUTCString()}
                         </span>
                     </h4>
-                    <p>{message}</p>
+                    <div className="message__info__data">
+                        {imageurl && <img src={imageurl} />}
+                        {message && <p>{message}</p>}
+                    </div>
                 </div>
             </div>
         </div>

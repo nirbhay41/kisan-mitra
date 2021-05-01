@@ -5,6 +5,7 @@ import "./About.scss";
 import nirbhay_profile_pic from "../../resources/profile_pics/nirbhay_profile_pic.jpg";
 import shashank_profile_pic from "../../resources/profile_pics/shashank_profile_pic.jpeg";
 import abhishek_profile_pic from "../../resources/profile_pics/abhishek_profile_pic.jpeg";
+import shubham_profile_pic from '../../resources/profile_pics/shubham_profile_pic.jpeg';
 import Navbar from "../Navbar/Navbar";
 
 function About() {
@@ -18,10 +19,8 @@ function About() {
               <h1>We are farmers</h1>
               <p id="tagline">We are together, forever</p>
               <p id="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                animi dolores labore repudiandae eius atque iste eaque, ab
-                dignissimos tempora id aperiam libero sequi laboriosam
-                perferendis ipsum nisi voluptates illo.
+              Kisan Mitra is a programme designed to approach and understand farmers needs, offer advice, guide and refer best farm practices to them. 
+                        Be it soil, growth and nurturing of crops or pest related problems Kisan Mitra Team (KM) – is dedicated to resolve them. 
               </p>
             </div>
             <div className="about-pic">
@@ -80,7 +79,8 @@ function About() {
             <AboutCard
               name="Shubham Kumar Tripathi"
               position="CCO"
-              profile_pic={shashank_profile_pic}
+              profile_pic={shubham_profile_pic}
+              in_url="https://www.linkedin.com/in/shubham-tripathi-1a27311b1/"
             />
             <AboutCard
               name="Abhishek Kumar Singh"

@@ -1,0 +1,50 @@
+.notfound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.gif{
+    background-image: url('../../resources/404.gif');
+    height: 400px;
+    width: 900px;
+    background-position: center;
+}
+
+.end > a{
+    text-decoration: none;
+}
+
+.end > a > button{
+    display: block;
+    margin: 10px auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 8px;
+    cursor: pointer;
+    background: #39ac31;
+    color: #fff !important;
+}
+
+.heading > h1{
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.end > *{
+    text-align: center;
+    line-height: 2;
+}
+
+.end > p{
+    font-size: 1.2rem;
+}
+
+.end > h2{
+    font-size: 2.1rem;
+    font-weight: 100;
+}
+

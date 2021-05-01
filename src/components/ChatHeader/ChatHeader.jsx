@@ -1,5 +1,4 @@
 import React from 'react';
-
 import "./ChatHeader.scss";
 
 function ChatHeader({channelName}) {
@@ -13,4 +12,4 @@ function ChatHeader({channelName}) {
     )
 }
 
-export default ChatHeader
+export default ChatHeader;

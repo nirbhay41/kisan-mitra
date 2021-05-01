@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import { Login } from "./components/login/login";
+import { Login } from "./components/Login/Login";
 import Hero from "./components/Hero";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser, login, logout } from "./features/userSlice";

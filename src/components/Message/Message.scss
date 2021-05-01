@@ -7,18 +7,17 @@
 
 .box-chat{
     background-color: #353f49;
-    border-radius: 20px;
+    border-radius: 10px;
     display: inline-block;
     padding-top: 10px;
-    padding-bottom: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     max-width: 50%;
     min-width: 29%;
     word-break: break-all;
 }
 
 .message__info{
-    margin-left: 20px;
+    margin-left: 7px;
 }
 
 .message__timestamp{
@@ -36,6 +35,17 @@
 .message__info > h4{
     font-weight: 900;
     padding-right: 10px;
+}
+
+.message__info__data{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 7px 10px 0px;
+}
+
+.message__info__data > p{
+    padding: 5px 0px 0px 5px;
+    font-size: 1.3rem;
 }
 
 .sent{

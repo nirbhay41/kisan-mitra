@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import firebase from 'firebase';
@@ -7,23 +7,27 @@ import logo from '../../resources/logo_transp.webp';
 
 function Navbar({backgroundStyle}) {
   const checkStyle = backgroundStyle === 'bg-grey' ? 'bg-grey' : 'bg-black';
-
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
 
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const disableScroll = () => {
+    document.body.style = `overflow: hidden !important;position: relative !important;padding-left: 0px;padding-top: 0px;padding-right: 0px;margin-left: 0;margin-top: 0;margin-right: 0px !important;`;
+  }
 
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else setButton(true);
-  };
+  const enableScroll = () => {
+    document.body.style = "";
+  }
+
+  const handleClick = () => {
+    setClick(!click);
+  }
+  const closeMobileMenu = () => {
+    setClick(false);
+    enableScroll();
+  }
 
   useEffect(() => {
-    showButton();
-  }, []);
-  window.addEventListener("resize", showButton);
+    click ? disableScroll() : enableScroll();
+  }, [click]);
 
   return (
     <>
@@ -31,7 +35,7 @@ function Navbar({backgroundStyle}) {
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img id="logo" src={logo} alt='kishan-mittre logo'/>
-              <p>Kishan-Mittre</p>
+              <p>Kisan-Mitra</p>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />

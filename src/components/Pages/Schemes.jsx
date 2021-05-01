@@ -69,12 +69,12 @@ function Schemes() {
 
   return (
     <>
-      <Navbar backgroundStyle='bg-black'/>
+      <Navbar backgroundStyle='bg-black' />
       <div className="schemes">
         <h1 className="schemes_heading">Government Schemes</h1>
         <div className="schemes-list">{list}</div>
         <div className="schemes-footer">
-          <Footer backgroundStyle='bg-black'/>
+          <Footer backgroundStyle='bg-black' />
         </div>
       </div>
     </>
